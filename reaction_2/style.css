@@ -39,6 +39,29 @@ div {
     background-color: var(--lemon-yellow);
 }
 
+.area_header .area_profile {
+    display: inline-block;
+    margin-top: 200px;
+    float: center;
+}
+
+.area_header .area_thumb_img {
+    position: absolute;
+    display: inline-block;
+    padding: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.area_header .area_blogger {
+    position: absolute;
+    left: 50%;
+    margin-top: 30%;
+    transform: translateX(-50%);
+}
+
 .area_content {
     position: relative;
     float: left;
