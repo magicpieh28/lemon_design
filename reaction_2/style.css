@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+:root {
+    /*  color  */
+    --lemon-yellow: #ffde18;
+    --white: white;
+    --black: black;
+
+    /*  pc size  */
+    --pc-cont-width: 800px;
+    --pc-cont-height-min: 858px;
+    --pc-left-side-width-min: 320px;
+    --pc-left-side-width-rate: 23%;
+    --pc-height: 907px;
+    --pc-right-side-width-min: calc(
+        calc(100% - var(--pc-left-side-width-rate) - var(--pc-cont-width))
+    );
+}
+
+body {
+    /*container margin을 제거*/
+    margin: auto;
+}
+
+div {
+    text-align: center;
+    color: black;
+}
+
+/* #는 id명 */
+/* .은 class명 */
+.area_side_left {
+    position: relative;
+    float: left;
+    width: var(--pc-left-side-width-min);
+    min-width: var(--pc-left-side-width-rate);
+    min-height: 100%;
+    height: var(--pc-height);
+    background-color: var(--lemon-yellow);
+}
+
+.area_content {
+    position: relative;
+    float: left;
+    width: var(--pc-cont-width);
+    min-height: 100%;
+}
+
+.area_article {
+    float: left;
+    width: 100%;
+    min-height: var(--pc-cont-height-min);
+    /*    background-color: var(--white);*/
+    background-color: azure;
+}
+
+.area_foot {
+    text-align: left;
+    float: left;
+    width: 100%;
+    height: 48px;
+    border-top: 1px solid var(--lemon-yellow);
+    /*    background-color: var(--white);*/
+    background-color: aqua;
+}
+
+.area_appendix {
+    width: var(--pc-right-side-width-min);
+    height: var(--pc-height);
+    /*    background-color: var(--white);*/
+    background-color: whitesmoke;
+}
