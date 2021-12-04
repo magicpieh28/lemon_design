@@ -9,17 +9,21 @@
     /*  pc size  */
     --pc-cont-width-max: 800px;
     --pc-cont-height-min: 858px;
-    --pc-left-side-width-max: 320px;
-    --pc-left-side-width-rate: 23%;
+    --pc-header-width-max: 320px;
+    --pc-header-width-rate: 23%;
+    --pc-profile-banner-margin: 200px 0 200px 0
     --pc-height: 907px;
-    --pc-right-side-width-min: calc(
-        calc(100% - var(--pc-left-side-width-rate) - var(--pc-cont-width))
-    );
+    --pc-appendix-width-min: calc(calc(100% - var(--pc-guide-width-rate) - var(--pc-cont-width)));
+
+    /*  tablet size  */
+    --tab-cont-width-max: 758px;
 }
 
 body {
     /*container margin을 제거*/
     margin: auto;
+    height: 100;
+    min-height: 100;
 }
 
 div {
@@ -27,44 +31,51 @@ div {
     color: black;
 }
 
+/* PC */
 .area_container {
-    max-width: calc(var(--pc-cont-width-max) + var(--pc-left-side-width-max));
-    padding: 0 auto;
+    position: relative;
+    max-width: calc(var(--pc-cont-width-max) + var(--pc-guide-width-max));
+    min-height: 100%;
+    background-color: var(--black);
 }
 
-/* #는 id명 */
-/* .은 class명 */
-.area_side_left {
-    position: relative;
-    float: left;
-    max-width: var(--pc-left-side-width-max);
-    min-width: var(--pc-left-side-width-rate);
+.area_header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    min-width: var(--pc-header-width-max);
+    width: var(--pc-header-width-rate);
     min-height: 100%;
-    height: var(--pc-height);
     background-color: var(--lemon-yellow);
 }
-
-.area_header .area_profile {
-    display: inline-block;
-    margin-top: 200px;
-    float: center;
+.area_guide_bar {
+    display: block;
+    height: 100%;
+    min-height: var(--pc-height);
 }
-
-.area_header .area_thumb_img {
+.area_profile {
     position: absolute;
+    padding: 50% 0;
     display: inline-block;
-    padding: auto;
-    margin-top: 10%;
-    margin-bottom: 10%;
-    left: 50%;
+    margin: var(--pc-profile-banner-margin);
     transform: translateX(-50%);
+    height: 30%
 }
-
-.area_header .area_blogger {
-    position: absolute;
-    left: 50%;
-    margin-top: 30%;
-    transform: translateX(-50%);
+.area_profile .area_title {
+    position: relative;
+}
+.area_profile .area_thumb_img {
+    position: relative;
+    display: block;
+    width: 50%;
+    height: 17%;
+    margin: 10% auto 5%;
+    border-radius: 51px;
+}
+.area_profile .area_blogger {
+    position: relative;
+    padding: 200px;
 }
 
 .area_content {
@@ -93,8 +104,18 @@ div {
 }
 
 .area_appendix {
-    width: var(--pc-right-side-width-min);
+    width: var(--pc-appendix-width-min);
     height: var(--pc-height);
     /*    background-color: var(--white);*/
     background-color: whitesmoke;
+}
+
+/* TABLET */
+@media only screen and (max-width: var(--tab-cont-width-max)) {
+    .area_container {
+        padding: 0 auto;
+    }
+
+    /*  area_left_bar will be area_upper_bar  */
+/*    .area_*/
 }
