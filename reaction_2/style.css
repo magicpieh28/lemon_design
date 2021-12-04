@@ -7,9 +7,9 @@
     --black: black;
 
     /*  pc size  */
-    --pc-cont-width: 800px;
+    --pc-cont-width-max: 800px;
     --pc-cont-height-min: 858px;
-    --pc-left-side-width-min: 320px;
+    --pc-left-side-width-max: 320px;
     --pc-left-side-width-rate: 23%;
     --pc-height: 907px;
     --pc-right-side-width-min: calc(
@@ -27,12 +27,17 @@ div {
     color: black;
 }
 
+.area_container {
+    max-width: calc(var(--pc-cont-width-max) + var(--pc-left-side-width-max));
+    padding: 0 auto;
+}
+
 /* #는 id명 */
 /* .은 class명 */
 .area_side_left {
     position: relative;
     float: left;
-    width: var(--pc-left-side-width-min);
+    max-width: var(--pc-left-side-width-max);
     min-width: var(--pc-left-side-width-rate);
     min-height: 100%;
     height: var(--pc-height);
@@ -65,7 +70,7 @@ div {
 .area_content {
     position: relative;
     float: left;
-    width: var(--pc-cont-width);
+    width: var(--pc-cont-width-max);
     min-height: 100%;
 }
 
